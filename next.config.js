@@ -5,6 +5,6 @@ module.exports = {
   env: {
     MONGODB_URI:
       'mongodb+srv://custom:custom@cluster0.eovt5.mongodb.net/custom?retryWrites=true&w=majority',
-    MONGODB_DB: 'realreal',
+    MONGODB_DB: 'dropbox',
   },
 }
