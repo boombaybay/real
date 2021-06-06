@@ -1,15 +1,15 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { useQuery } from 'react-query'
-import React, { useEffect, useState } from 'react'
-import Head from 'next/head'
-import styled from 'styled-components'
-import { useRouter } from 'next/dist/client/router'
-import NavBar from '../components/NavBar'
-import Launcher from '../components/Launcher'
-import Transfer from '../components/Transfer'
-import Overlay from '../components/Overlay'
-import getUserLocation from '../actions/get-user-location'
-import MobileHeader from '../components/MobileHeader'
+import { useQuery } from "react-query";
+import React, { useEffect, useState } from "react";
+import Head from "next/head";
+import styled from "styled-components";
+import { useRouter } from "next/dist/client/router";
+import NavBar from "../components/NavBar";
+import Launcher from "../components/Launcher";
+import Transfer from "../components/Transfer";
+import Overlay from "../components/Overlay";
+import getUserLocation from "../actions/get-user-location";
+import MobileHeader from "../components/MobileHeader";
 
 const Styles = styled.div`
   // overflow: hidden;
@@ -43,28 +43,25 @@ const Styles = styled.div`
   //     display: none;
   //   }
   // }
-`
+`;
 
 const Index = () => {
-  const [showOverlay, setShowOverLay] = useState<boolean>(false)
-  const [location, setLocation] = useState({})
-  const { data } = useQuery('location', getUserLocation, {
+  const [showOverlay, setShowOverLay] = useState<boolean>(false);
+  const [location, setLocation] = useState({});
+  const { data } = useQuery("location", getUserLocation, {
     onSuccess: (res) => {
-      setLocation(res)
+      setLocation(res);
     },
-  })
+  });
 
   useEffect(() => {
     if (showOverlay) {
-      document.body.style.overflow = 'hidden'
+      document.body.style.overflow = "hidden";
     }
-    document.body.style.overflow = 'unset'
-  }, [showOverlay])
+    document.body.style.overflow = "unset";
+  }, [showOverlay]);
   return (
     <Styles>
-      <Head>
-        <title>WeTransfer</title>
-      </Head>
       {/* 
       <div className="container">
         <img src="/bg.png" alt="bg" className="webg" />
@@ -87,7 +84,7 @@ const Index = () => {
         )}
       </div> */}
     </Styles>
-  )
-}
+  );
+};
 
-export default Index
+export default Index;
